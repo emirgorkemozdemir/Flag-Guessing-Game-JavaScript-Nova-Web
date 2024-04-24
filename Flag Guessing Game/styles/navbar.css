@@ -1,0 +1,34 @@
+@import url("../styles/colors.css");
+
+nav
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav a
+{
+    color: var(--third_color_light);
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+nav a:hover
+{
+    color: var(--third_color);
+}
+
+@media screen and (max-width:390px) 
+{
+nav a
+{
+    font-size: 1em;
+}
+}
