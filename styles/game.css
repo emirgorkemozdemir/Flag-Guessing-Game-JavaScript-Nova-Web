@@ -21,3 +21,50 @@ body
     align-items: center;
     justify-content: space-between;
 }
+
+.gamescreen button
+{
+    width: 40%;
+    height: 20%;
+    font-size: 1.2em;
+    margin-top: 2%;
+    background-color: var(--third_color_light);
+    color: var(--primary_color);
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamescreen button:hover
+{
+    background: transparent;
+    border: 2px solid var(--third_color_light);
+    color: var(--third_color_light);
+}
+
+@media screen and (max-width:1024px)
+{
+    .gamescreen
+    {
+         width: 50%;
+    }
+}
+
+@media screen and (max-width:530px)
+{
+    .gamescreen
+    {
+        width: 70%;
+    }
+
+    .gamescreen button
+    {
+         height: 10%;
+         font-size: 0.9em;
+    }
+}
