@@ -1,5 +1,6 @@
 let question_flags = ["Denmark","France","Italy","Turkey"];
 let choice_flags = ["Denmark","France","Italy","Turkey"];
+var point = 0;
 
 const flag_image = document.getElementById("flag");
 const c1_button = document.getElementById("choice1");
@@ -66,7 +67,25 @@ function next_question()
 
 function select_c1()
 {
-  
+let choice_text = c1_button.innerHTML;
+let img_link = flag_image.src;
+
+let choice_link = "http://127.0.0.1:5500/images/"+choice_text+".png";
+
+if(choice_link==img_link)
+{
+window.alert("Correct answer");
+next_button.style.display="block";
+c1_button.style.display="none";
+c2_button.style.display="none";
+c3_button.style.display="none";
+}
+else
+{
+window.alert("Wrong answer");
 }
 
+}
+
+c1_button.addEventListener("click",select_c1);
 next_question();
