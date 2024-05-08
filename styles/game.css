@@ -47,6 +47,11 @@ body
     color: var(--third_color_light);
 }
 
+#next
+{
+    display: none;
+}
+
 @media screen and (max-width:1024px)
 {
     .gamescreen
