@@ -6,6 +6,12 @@ const flag_image = document.getElementById("flag");
 const c1_button = document.getElementById("choice1");
 const c2_button = document.getElementById("choice2");
 const c3_button = document.getElementById("choice3");
+const my_point = document.getElementById("mypoint");
+
+function display_point()
+{
+  my_point.innerHTML="Score : "+point;
+}
 
 const next_button = document.getElementById("next");
 
@@ -79,13 +85,92 @@ next_button.style.display="block";
 c1_button.style.display="none";
 c2_button.style.display="none";
 c3_button.style.display="none";
+point++;
+display_point();
 }
 else
 {
 window.alert("Wrong answer");
+point--;
+c1_button.style.display="none";
+display_point();
 }
 
+}
+
+function select_c2()
+{
+let choice_text = c2_button.innerHTML;
+let img_link = flag_image.src;
+
+let choice_link = "http://127.0.0.1:5500/images/"+choice_text+".png";
+
+if(choice_link==img_link)
+{
+window.alert("Correct answer");
+next_button.style.display="block";
+c1_button.style.display="none";
+c2_button.style.display="none";
+c3_button.style.display="none";
+point++;
+display_point();
+}
+else
+{
+window.alert("Wrong answer");
+point--;
+c2_button.style.display="none";
+display_point();
+}
+
+}
+
+
+function select_c3()
+{
+let choice_text = c3_button.innerHTML;
+let img_link = flag_image.src;
+
+let choice_link = "http://127.0.0.1:5500/images/"+choice_text+".png";
+
+if(choice_link==img_link)
+{
+window.alert("Correct answer");
+next_button.style.display="block";
+c1_button.style.display="none";
+c2_button.style.display="none";
+c3_button.style.display="none";
+point++;
+display_point();
+}
+else
+{
+window.alert("Wrong answer");
+point--;
+c3_button.style.display="none";
+display_point();
+}
+
+}
+
+function check_game_end()
+{
+  if(question_flags.length==0)
+  {
+       // oyun bitecek
+  }
+  else
+  {
+    next_button.style.display="none";
+    c1_button.style.display="block";
+    c2_button.style.display="block";
+    c3_button.style.display="block";
+    next_question();
+  }
 }
 
 c1_button.addEventListener("click",select_c1);
+c2_button.addEventListener("click",select_c2);
+c3_button.addEventListener("click",select_c3);
+next_button.addEventListener("click",check_game_end);
 next_question();
